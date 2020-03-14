@@ -8,6 +8,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 const PurgeCssPlugin = require('@fullhuman/postcss-purgecss');
 
 export default {
+  publicPath: '/',
   autoprefixer: {
     overrideBrowserslist: [
       "iOS >= 6",
@@ -42,6 +43,9 @@ export default {
     [
       'umi-plugin-react',
       {
+        links:[
+          { rel: 'icon', href: ' <%= PUBLIC_PATH %>favicon.ico' },
+        ],
         antd: false,
         dva: true,
         dynamicImport: false,
