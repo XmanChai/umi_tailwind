@@ -26,6 +26,7 @@ export default {
               nodir: true,
             }),
           ],
+          defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
         }),
       ]
       : [],
