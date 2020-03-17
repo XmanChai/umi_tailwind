@@ -1,9 +1,11 @@
 {
   "private": true,
   "scripts": {
+    "prestart": "json-server -c ./db/json-server.json ./db/fakedb.js &",
     "start": "umi dev",
     "build": "umi build",
     "test": "umi test",
+    "xhr": "json-server ./db/fakedb.js",
     "lint": "eslint {src,mock,tests}/**/*.{js,jsx} --fix",
     "precommit": "lint-staged"
   },
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
     "babel-eslint": "^9.0.0",
+    "dva-logger": "^1.0.0",
     "eslint": "^5.4.0",
     "eslint-config-umi": "^1.4.0",
     "eslint-plugin-flowtype": "^2.50.0",
@@ -26,8 +29,11 @@
     "eslint-plugin-react": "^7.11.1",
     "glob": "^7.1.6",
     "husky": "^0.14.3",
+    "json-server": "^0.16.1",
     "lint-staged": "^7.2.2",
+    "mockjs": "^1.1.0",
     "react-test-renderer": "^16.7.0",
+    "roadhog-api-doc": "^1.1.2",
     "tailwindcss": "^1.2.0",
     "umi": "^2.7.7",
     "umi-plugin-react": "^1.8.4"
